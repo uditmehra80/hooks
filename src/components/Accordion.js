@@ -1,8 +1,23 @@
 import React, { useState } from 'react';
 
-const Accordion = ({ items }) => {
+const Accordion = () => {
 
     const [activeIndex, setActiveIndex] = useState(null);
+
+    const items = [
+        {
+            title: 'what is js',
+            content: 'abc anv'
+        },
+        {
+            title: 'what is react',
+            content: 'aadjdadjd'
+        },
+        {
+            title: 'what is node',
+            content: 'dhdvbvddvdvs'
+        }
+    ]
 
     const onTitleClick = (index) => {
         setActiveIndex(index);
