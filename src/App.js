@@ -30,10 +30,10 @@ function App() {
     <div className="ui container">
       <Header />
       <Route path='/'>
-        <Accordion />
-      </Route>
-      <Route path='/list'>
         <Search />
+      </Route>
+      <Route path='/accordion'>
+        <Accordion />
       </Route>
       <Route path='/dropdown'>
         <Dropdown label='color' onSelectedChange={setSelected} selected={selected} options={options} />
