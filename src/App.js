@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import Accordion from "./components/Accordion";
 import Search from "./components/Search";
 import Dropdown from "./components/Dropdown";
+import Translate from "./components/Translate";
+import Route from "./components/Route";
+import Header from "./components/Header";
+
 
 const options = [
   {
@@ -20,19 +24,23 @@ const options = [
 
 function App() {
 
-  const [selectedColor, setSelectedColor] = useState(options[0]);
-  const [showDropdown, setShowDropdown] = useState(true);
+  const [selected, setSelected] = useState(options[0]);
 
   return (
     <div className="ui container">
-      <button className="ui button" onClick={() => setShowDropdown(!showDropdown)}>Toggle dropdown</button>
-      {showDropdown
-        ?
-        <Dropdown onSelectedChange={setSelectedColor} selectedColor={selectedColor} options={options} />
-        : null
-      }
-      {/* <Accordion /> */}
-      {/* <Search /> */}
+      <Header />
+      <Route path='/'>
+        <Accordion />
+      </Route>
+      <Route path='/list'>
+        <Search />
+      </Route>
+      <Route path='/dropdown'>
+        <Dropdown label='color' onSelectedChange={setSelected} selected={selected} options={options} />
+      </Route>
+      <Route path='/translate'>
+        <Translate />
+      </Route>
     </div>
   );
 }
