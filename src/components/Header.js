@@ -17,6 +17,9 @@ function Header(props) {
             <Link href="/translate" className='item'>
                 Translate
             </Link>
+            <Link href="/draftjs" className='item'>
+                Draft.js
+            </Link>
         </div>
     );
 }

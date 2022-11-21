@@ -5,6 +5,7 @@ import Dropdown from "./components/Dropdown";
 import Translate from "./components/Translate";
 import Route from "./components/Route";
 import Header from "./components/Header";
+import Draft from "./components/Draft";
 
 
 const options = [
@@ -40,6 +41,9 @@ function App() {
       </Route>
       <Route path='/translate'>
         <Translate />
+      </Route>
+      <Route path='/draftjs'>
+        <Draft />
       </Route>
     </div>
   );
